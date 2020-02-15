@@ -1,0 +1,19 @@
+Data1<-read.csv(file.choose(),header = TRUE)
+View(Data1)
+plot(Data1$LungCap,Data1$Age)
+cor(Data1$LungCap,Data1$Age)
+mod<-lm(Data1$LungCap~Data1$Age)
+summary(mod)
+attributes(mod)
+mod$coefficients
+plot(Data1$Age,Data1$LungCap)
+abline(mod,col=2)
+?abline()
+d<-iris
+d<-d[,-c(5)]
+head(iris)
+head(d)
+c<-cor(d)
+corrplot(c)
+corrplot(c,method="number")
+corrplot(c,method="pie")
